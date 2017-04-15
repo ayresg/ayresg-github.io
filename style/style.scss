@@ -1,0 +1,118 @@
+@import "_box-sizing";
+@import "_reset";
+// Colors
+$background-color: #DDDDDF;
+$light-accent-color: #673FA4;
+$dark-accent-color: #383643;
+$base-font-color: #222326;
+$vibrant-color: #238634;
+// Fonts
+$fancy-font: "IM Fell English";
+$normal-font: "Oxygen";
+// Layout variables
+$logo-width: 20%;
+$margin: 1em;
+//Actual SCSS
+body {
+  background-color: $background-color;
+  text-decoration: none;
+  font-family: $normal-font;
+  text-align: justify;
+  word-spacing: 0.25rem;
+  margin: $margin;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $fancy-font;
+}
+
+p {
+  margin: $margin 0;
+}
+
+ul,
+ol {
+  margin: $margin;
+}
+
+ul li {
+  list-style-type: circle;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+a {
+  color: $vibrant-color;
+  text-decoration: inherit;
+}
+
+#logo {
+  margin: $margin;
+  width: $logo-width;
+}
+
+// Navigation for mobile
+.dropdown-container {
+  margin: -1 * $margin;
+  background-color: $dark-accent-color;
+  color: $background-color;
+  .menu {
+    display: inline-block;
+    float: right;
+    margin: $margin;
+    .little-menu-bar {
+      width: 35px;
+      height: 5px;
+      background-color: $background-color;
+      border-radius: 10px;
+      margin: 6px 0;
+    }
+  }
+  &:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content,
+  {
+    //.dropdown-content a {
+    display: none;
+    color: $background-color;
+    a {
+      color: inherit;
+    }
+  }
+}
+
+// Navigation for desktop
+@media (min-width: 600px) {
+  .nav-bar {
+    margin: -1 * $margin;
+    display: block;
+    li {
+      display: inline-block;
+      padding: 0 1.25%;
+    }
+    .menu {
+      display: none;
+    }
+  }
+  .dropdown-content {
+    display: inherit;
+  }
+  .primary-nav {
+    font-family: $fancy-font;
+    font-size: 1.25rem;
+  }
+  .secondary-nav {
+    position: absolute;
+    right: 0;
+    font-size: .85em;
+    color: $vibrant-color;
+  }
+}

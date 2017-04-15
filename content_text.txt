@@ -1,0 +1,130 @@
+Sitemap:
+Homepage
+- Academics
+  - List of departments, separated by Scholars and Fools
+    - Scholars:
+      - Necrobiology
+      - Is this the Dept of Riddles? (interdisciplinary)
+      - Chemistry
+      - Sculpture
+      - Revered Dead Languages
+      - Cryptography
+      - Biology
+      - History
+      - Planology
+      - Astronomy
+      - Alchemy
+      - Generalized Abstract Nonsense
+      - Artificery
+    - Fools:
+      - Village Idiocy
+      - Is this the Dept of Riddles? (interdisciplinary)
+      - Poor Labeling
+    - Proposed additional Fools departments:
+      - Department of Not Having Enough Departments
+  - Online learning
+  - Special programs, if any
+  - Cool things (library, artificery, amphitheatre)
+    
+- Admissions & Aid
+  - information for different types of applicants
+    - apprentices / people with Guild sponsors
+    - untrained people
+    - guild members broadening their areas of expertise
+  - 
+    
+- Student Life
+  - Athletics
+  - Arts
+  - Room and board
+  - Health and safety
+  - Academy town
+  - Student organizations
+  - Events and activities
+- About
+  - History & mission
+  - Campus map & Directions
+  - Community involvement
+  - Diversity
+
+- Directory
+- Sitemap
+
+- Students
+  - Events
+  - Resources
+  - Undergrads
+  - Graduate students
+  - Continuing education
+  - Online learning
+  - various internal nonsense
+- Faculty & Staff
+  - various internal nonsense
+- Family
+  - Parent resources
+  - Campus information
+  - Public safety
+- Alumni
+  - should probably just be about the guild
+- Visitors
+
+
+Who is this website actually for?
+- prospective students googling the school
+- current students looking at departments, opportunities, etc
+
+Prospective students:
+  - courses / departments / curricula
+  - resources and opportunities and stuff that's good about the school
+  
+    - 
+  - visit the academy or see maps and shit
+    - tours for different types of things
+  - careers and stuff after academy
+  
+Current students:
+  - courses and departments
+  - course planning / academic advising
+  - school policies
+  - academic calendar
+  - student employment (for example, at the artificery, library, amphitheatre, various administrative stuff, medical, campus paladins, student work/internships/summer apprenticeships)
+Faculty
+
+
+WORLDBUILDING QUESTIONS
+- is tiered education with grad school even a thing?
+- how do the guilds sustain themselves? what do the scholars do to get money?
+
+
+
+Fun fact: the artificial river wasn't just to provide power for the dept of artificery, it was also to make the landscape more scenic for the most foolish painters in the world
+(A MORON
+A PLAN
+A CANAL
+PANOROMA)
+
+Learning online (as in, on a tightrope)
+
+
+
+Somewhere on the website include a bulleted list of great works or inventions that the academy has produced
+One of the entries is "Jeremy" with no elaboration
+the Dodeca Lisa
+
+
+Things to remember you can do:
+<input>
+<blockquote>
+<blockquote cite="https://de...     // blockquotes
+<q cite="ht                        // inline quotes
+<abbr title="Hypertext Markup Language">HTML</abbr>
+<time datetime="2016-01-20">20 January 2016</time>
+<time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+
+body {
+    background-image: url("paper.gif");
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+// can do background colors for ANY element!
