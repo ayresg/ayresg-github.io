@@ -1,0 +1,4 @@
+Academics: academics
+Admissions &amp; Aid: academics
+Student Life: student-life
+About: about

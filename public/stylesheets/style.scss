@@ -1,0 +1,109 @@
+
+// Colors
+$background-color: #DDDDDF;
+$light-accent-color: #673FA4;
+$dark-accent-color: #383643;
+$base-font-color: #222326;
+$vibrant-color: #238634;
+$dark-overlay: rgba(0, 0, 0, 0.3);
+// Fonts
+$masthead-font:'IM Fell Double Pica', serif;
+$fancy-font: "IM Fell English";
+$normal-font: "Oxygen";
+$small-font-size: 0.8rem;
+// Layout variables
+$margin: 0.5em;
+$padding: $margin;
+$logo-height: 40px;
+$header-height: 5 * $margin;
+$non-mobile-screen: 450px;
+
+// Imports
+@import "_box-sizing";
+@import "_normalize";
+@import "_header--big";
+@import "_header--small";
+
+//Actual SCSS
+body {
+  // layout
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+  margin: 0;
+  // colors
+  background-color: $background-color;
+  // elements and text
+  text-align: justify;
+  text-decoration: none;
+  font-family: $normal-font;
+  word-spacing: 0.25rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $fancy-font;
+}
+
+main {
+  margin: $margin;
+  padding: $padding;
+  flex-grow: 1;
+}
+ul li {
+  list-style-type: circle;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+// Header and navigation stuff (small)
+.big_header_container {
+  display: none;
+}
+.small_header_container {
+  display: flex;
+}
+
+// Header and navigation stuff (big)
+@media (min-width: $non-mobile-screen) {
+  .big_header_container {
+    display: flex;
+  }
+  .small_header_container {
+    display: none;
+  }
+}
+
+
+
+// Footer
+.footer_container {
+  // layout
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  // contents setting
+  justify-content: space-around;
+  font-size: $small-font-size;
+  text-align: left;
+  background-color: $dark-accent-color;
+  .footer_item {
+    flex-grow: 0;
+    margin: $margin;
+    padding: $padding;
+  }
+}

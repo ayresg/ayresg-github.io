@@ -1,0 +1,11 @@
+<h1>Academics at ASF</h1>
+
+<h2>Department list:</h2>
+<!-- Iterate through list of departments -->
+<ul>
+  <% @department_directory.each_value do |dept| %>
+    <li>
+      <%= link_to dept.pretty_name, "academics/#{dept.page_name}" %>
+    </li>
+  <% end %>  
+</ul>

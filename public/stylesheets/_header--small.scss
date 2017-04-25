@@ -1,0 +1,54 @@
+.small_header_container,
+.footer_container {
+  background-color: $vibrant-color;
+  color: $background-color;
+}
+
+.small_header_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .small_header_item {
+    margin: $margin;
+    &.logo {
+      height: 1.75em;
+    }
+  }
+}
+
+.dropdown_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  // appearance of the menu button
+  &.navicon {
+    width: 1.75em;
+    height: 1.25em;
+    line-height: 0;
+    border-top: .75em double $background-color;
+    border-bottom: .25em solid $background-color;
+  }
+  .dropdown_item {
+    display: none;
+  }
+  &:hover .dropdown_item {
+    padding: $padding;
+    margin: 0;
+    width: 100vw;
+    flex: 1;
+    min-height: 1.25em;
+    display: flex;
+    background-color: $vibrant-color;
+    &.primary_nav_item--small {
+      color: red;
+    }
+    &.secondary_nav_item--small {
+      color: aqua;
+    }
+    &li {
+      list-style-type: none;
+    }
+  }
+}

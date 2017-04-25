@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Title -->
+    <title>
+      <%= @title %>
+    </title>
+
+    <!-- Metadata -->
+    <meta lang="en">
+    <meta charset="utf-8">
+    <meta name="description" content="<%= @description %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Css -->
+    <%= stylesheet_link_tag "/stylesheets/style.css" %>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica" rel="stylesheet">
+
+  </head>
+  <body>
+<!-- Big header and navbar and everything  -->
+  <header class="big_header_container" style='background-image: url(<%="../images/#{@image.filename}" %>);'>
+    <div class="big_header_item">
+      <!--Logo-->
+      <%= link_to((image_tag("/images/placeholder_logo_light.png", :alt => "Logo", :class => "logo")), '/index') %>
+      <!-- Title -->
+      <div class="nav_title--big">
+        <div class="academy">ACADEMY</div>
+        <div class="academy_subtitle"><i>of</i> SCHOLARS <i>and</i> FOOLS</div>
+      </div>
+      <!-- Secondary Navbar (big)-->
+      <ul class="secondary_nav--big">
+        <li><a href="<%= url('/students/index') %>">Students</a></li>
+        <li><a href="<%= url('/faculty-and-staff/index') %>">Faculty &amp; Staff</a></li>
+        <li><a href="<%= url('/guild') %>">Guild</a></li>
+        <li><a href="<%= url('/visitors') %>">Visitors</a></li>
+      </ul>
+    </div>
+    
+     <!-- Primary Navbar (big) -->
+    <ul class="primary_nav--big">
+      <li><a href="<%= url('/academics/index') %>">Academics</a></li>
+      <li><a href="<%= url('/admissions/index') %>">Admissions &amp; Aid</a></li>
+      <li><a href="<%= url('/student-life/index') %>">Student Life</a></li>
+      <li><a href="<%= url('/about/index') %>">About</a></li>
+    </ul>
+  </header>
+
+  <!-- Small Header and Navbar (Primary & Secondary) -->
+  <header class="small_header_container">
+    <!--Logo-->
+    <%= link_to((image_tag("/images/placeholder_logo_light.png", :alt => "Logo", :class => "logo small_header_item")), '/index') %>
+    <!-- Title -->
+      <h4 class="nav_title--small small_header_item">Academy of Scholars and Fools</h4>
+    <!--Small Navigation-->
+    <nav class="dropdown_container small_header_item navicon">
+      <!--Small primary navigation-->
+      <li class="dropdown_item navicon"></li>
+      <li class = "dropdown_item primary_nav_item--small"><a href="<%= url('/academics/index') %>">Academics</a></li>
+      <li class = "dropdown_item primary_nav_item--small"><a href="<%= url('/admissions/index') %>">Admissions &amp; Aid</a></li>
+      <li class = "dropdown_item primary_nav_item--small"><a href="<%= url('/student-life/index') %>">Student Life</a></li>
+      <li class = "dropdown_item primary_nav_item--small"><a href="<%= url('/about/index') %>">About</a></li>
+      <!-- Small secondary navigation -->
+      <li class = "dropdown_item secondary_nav_item--small"><a href="<%= url('/students/index') %>">Students</a></li>
+      <li class = "dropdown_item secondary_nav_item--small"><a href="<%= url('/faculty-and-staff/index') %>">Faculty &amp; Staff</a></li>
+      <li class = "dropdown_item secondary_nav_item--small"><a href="<%= url('/guild') %>">Guild</a></li>
+      <li class = "dropdown_item secondary_nav_item--small"><a href="<%= url('/visitors') %>">Visitors</a></li>
+    </nav>
+  </header>
+
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer class="footer_container">
+    <div class="footer_item">
+      <%= @image.attribution %>
+    </div>
+    <div class="footer_item">
+      ©Copyright 1257 by the President and Daughter-in-Law Elect of the Academy of Scholars and Fools.
+    </div>
+    <div class="footer_item">
+      More links will go here when I get my shit together.
+    </div>
+  </footer>
+
+</body>
+</html>
