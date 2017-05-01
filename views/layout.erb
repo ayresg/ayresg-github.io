@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Set default title and image -->
+    <% @title ||= 'Academy of Scholars and Fools' %>
+    <% @image ||= Image.find_by_file_name('cobweb.jpg') %>
     <!-- Title -->
     <title>
       <%= @title %>
@@ -16,29 +19,33 @@
     <%= stylesheet_link_tag "/stylesheets/style.css" %>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Oxygen:400" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English:400i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|IM+Fell+English:400,400i" rel="stylesheet">
 
   </head>
   <body>
 <!-- Big header and navbar and everything  -->
-  <header class="big_header_container" style='background-image: url(<%="../images/#{@image.filename}" %>);'>
-    <div class="big_header_item">
-      <!--Logo-->
-      <%= link_to((image_tag("/images/placeholder_logo_light.png", :alt => "Logo", :class => "logo")), '/index') %>
-      <!-- Title -->
-      <div class="nav_title--big">
-        <div class="academy">ACADEMY</div>
-        <div class="academy_subtitle"><i>of</i> SCHOLARS <i>and</i> FOOLS</div>
-      </div>
-      <!-- Secondary Navbar (big)-->
+  <header class="big_header_container" style='background-image: url(<%="../images/#{@image.file_name}" %>);'>
+    <!-- Secondary Navbar (big)-->
       <ul class="secondary_nav--big">
         <li><a href="<%= url('/students/index') %>">Students</a></li>
         <li><a href="<%= url('/faculty-and-staff/index') %>">Faculty &amp; Staff</a></li>
         <li><a href="<%= url('/guild') %>">Guild</a></li>
         <li><a href="<%= url('/visitors') %>">Visitors</a></li>
       </ul>
+     
+     <div class="masthead">
+      <!--Logo-->
+      <%= link_to((image_tag("/images/placeholder_logo_light.png", :alt => "Logo", :class => "masthead_logo")), '/index') %>
+      <!-- Title -->
+      <a href="<%= url('/index') %>" class="masthead_name">
+          <p class="title">ACADEMY</p>
+            <p class="subtitle">
+              <span class="ital">of</span>
+               <span class="normal">SCHOLA<i>RS</i></span> 
+              <span class="ital">and</span>
+               <span class="normal">FOOLS</span>
+          </p>
+      </a>
     </div>
     
      <!-- Primary Navbar (big) -->

@@ -19,27 +19,27 @@ module Utilities
 
   class PhotoAttribution
     @@license_links = {
-      'CCO' => 'https://creativecommons.org/publicdomain/zero/1.0/',
+      'CC0' => 'https://creativecommons.org/publicdomain/zero/1.0/',
       'CC BY-SA 2.0' => 'https://creativecommons.org/licenses/by-sa/2.0/'
       }
     @@license_links.default = 'http://wikipedia.com/rickroll'
     
-    attr_reader :filename, :author, :author_page, :source, :license, :title
+    attr_reader :file_name, :author, :author_page, :source, :license, :title
     def initialize(params)
-      @filename,
+      @file_name,
       @author,
       @author_page,
       @source,
       @license,
-      @title = params
+      @title = params.map {|x| x.chomp}
     end
     
     def inspect
-      "#{@filename} by #{author}"
+      "#{@file_name} by #{author}"
     end
 
     def attribution
-      @title? title = "\#{@title}" : title = 'Photo'
+      @title? title = @title : title = 'Photo'
       "<a href='#{@source}'>#{title}</a> by 
       <a href='#{@author_page}'>#{@author}</a> licensed under 
       <a href='#{@@license_links[@license]}'>#{@license}</a>"
@@ -48,9 +48,8 @@ module Utilities
     def self.load_photos
       images = {}
       File.open('image_attributions.txt').each_line do |line|
-        next if line.equal?("*")
-        image_data = line.split(' | ')
-        images.store(image_data.first.chomp, PhotoAttribution.new(image_data))
+        image_data = line.chomp.split('	')
+        images.store(image_data.first, PhotoAttribution.new(image_data))
       end
       images
     end

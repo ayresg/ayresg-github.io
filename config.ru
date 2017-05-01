@@ -3,6 +3,5 @@
 # config.ru
 #
 
-require './server'
-require './departments'
-run AcademyApp
+require './app'
+run Sinatra::Application

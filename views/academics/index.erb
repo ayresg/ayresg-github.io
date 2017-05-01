@@ -2,10 +2,9 @@
 
 <h2>Department list:</h2>
 <!-- Iterate through list of departments -->
-<ul>
-  <% @department_directory.each_value do |dept| %>
-    <li>
-      <%= link_to dept.pretty_name, "academics/#{dept.page_name}" %>
-    </li>
+<ul class="item_box">
+  <% Department.find_each do |dept| %>
+      <%= link_to(
+  "<li>#{dept.name}</li>", "academics/#{dept.page_address}") %>
   <% end %>  
 </ul>

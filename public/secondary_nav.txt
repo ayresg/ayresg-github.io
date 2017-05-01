@@ -1,4 +1,0 @@
-Students: /students/
-Faculty &amp; Staff: /faculty-and-staff/
-Guild: /guild/
-Visitors: /visitors/

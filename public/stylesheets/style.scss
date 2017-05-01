@@ -1,35 +1,38 @@
-
 // Colors
 $background-color: #DDDDDF;
-$light-accent-color: #673FA4;
+$light-accent-color: #A9B4C6;
+$medium-accent-color: #878A81;
 $dark-accent-color: #383643;
 $base-font-color: #222326;
 $vibrant-color: #238634;
 $dark-overlay: rgba(0, 0, 0, 0.3);
 // Fonts
-$masthead-font:'IM Fell Double Pica', serif;
-$fancy-font: "IM Fell English";
-$normal-font: "Oxygen";
+$masthead-font: "IM Fell English",
+serif;
+$cursive-font: italic 2em 'IM Fell English',
+cursive;
+$header-font: "IM Fell English",
+serif;
+$text-font: "Cabin",
+sans-serif;
 $small-font-size: 0.8rem;
 // Layout variables
 $margin: 0.5em;
 $padding: $margin;
-$logo-height: 40px;
-$header-height: 5 * $margin;
-$non-mobile-screen: 450px;
-
+$medium-screen-threshold: 450px;
+$big-screen-threshold: 650px;
 // Imports
+@import "_mixins";
 @import "_box-sizing";
 @import "_normalize";
 @import "_header--big";
 @import "_header--small";
-
 //Actual SCSS
 body {
   // layout
   display: flex;
   flex-direction: column;
-  justify-content:flex-start;
+  justify-content: flex-start;
   align-items: stretch;
   min-height: 100vh;
   margin: 0;
@@ -38,8 +41,9 @@ body {
   // elements and text
   text-align: justify;
   text-decoration: none;
-  font-family: $normal-font;
-  word-spacing: 0.25rem;
+  font-family: $text-font;
+  letter-spacing: 0.025rem;
+//  word-spacing: 0.35rem;
 }
 
 h1,
@@ -48,7 +52,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $fancy-font;
+  font-family: $header-font;
 }
 
 main {
@@ -56,6 +60,7 @@ main {
   padding: $padding;
   flex-grow: 1;
 }
+
 ul li {
   list-style-type: circle;
 }
@@ -73,12 +78,13 @@ a {
 .big_header_container {
   display: none;
 }
+
 .small_header_container {
   display: flex;
 }
 
 // Header and navigation stuff (big)
-@media (min-width: $non-mobile-screen) {
+@media (min-width: $medium-screen-threshold) {
   .big_header_container {
     display: flex;
   }
@@ -87,7 +93,23 @@ a {
   }
 }
 
-
+// rounded box item things
+.item_box {
+  display: flex;
+  flex-direction: column;
+  margin: $margin / 2;
+  padding: $padding / 2;
+  li {
+    list-style-type: none;
+  }
+  a {
+    font-size: 1.15rem;
+    margin: $margin / 2;
+    padding: $padding / 2 $padding;
+    border-radius: 6px;
+    @include link_hover_bg($background-color, white, $medium-accent-color, $light-accent-color);
+  }
+}
 
 // Footer
 .footer_container {
