@@ -19,9 +19,9 @@ $small-font-size: 0.8rem;
 // Layout variables
 $margin: 0.5em;
 $padding: $margin;
-$tiny-screen-threshold: 250px;
+$tiny-screen-threshold: 300px;
 $medium-screen-threshold: 450px;
-$big-screen-threshold: 650px;
+$big-screen-threshold: 600px;
 // Imports
 @import "_mixins";
 @import "_box-sizing";

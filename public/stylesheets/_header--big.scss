@@ -1,4 +1,4 @@
-@import "_mixins";
+  @import "_mixins";
 $header-height: 30vh;
 $masthead-width: 30vw;
 $masthead-font-size__big: $masthead-width * 0.15;
@@ -37,8 +37,7 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
     align-items: center;
     .masthead_logo {
       margin: $margin;
-      // handle changing window size
-//      display: none;
+      //      display: block;
     }
   }
   .masthead_name--big {
@@ -66,33 +65,57 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
       .normal {
         font-size: $masthead-font-size__smaller;
         vertical-align: middle;
-      } 
+      }
     }
   }
-  .secondary_nav--big {
-    // layout
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    align-self: flex-end;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    // text
-    font-size: 0.75rem;
-    color: $background-color;
+}
+
+.secondary_nav--big {
+  // layout
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  align-self: flex-end;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  // text
+  font-size: 0.75rem;
+  color: $background-color;
+}
+
+.primary_nav--big {
+  // layout
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  // text
+  font: $cursive-font;
+  font-size: 3vw;
+  color: $dark-accent-color;
+  @include link_hover($dark-accent-color, black);
+}
+
+@media(max-width: $big-screen-threshold) {
+  .big_header_container:before {
+    background-image: linear-gradient(rgba($dark-accent-color, 0.8), rgba(black, 0) 45%, $background-color);
+  }
+  .masthead_logo {
+    display: none;
+  }
+  .masthead_name--big {
+//    margin-left: $margin * 2;
     @include link_hover($background-color, white);
   }
   .primary_nav--big {
-    // layout
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: space-around;
-    // text
-    font: $cursive-font;
-    font-size: 3vw;
-    color: $dark-accent-color;
-    @include link_hover($dark-accent-color, black);
+    flex-flow: row wrap;
+    font-size: 5vw;
+    li {
+      margin: 0 5vw;
+      padding: $padding / 4 $padding;
+      text-align: center;
+    }
   }
 }
