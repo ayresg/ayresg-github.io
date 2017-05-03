@@ -10,7 +10,7 @@
      <legend>Department(s):</legend>
      
       <ul class="column_list_container pl">
-        <% Department.find_each do |dept| %>
+        <% Department.all.each do |dept| %>
           <li class="column_list_item"><label><input type="checkbox" name="departments[]"
           value= <%= dept.abbrev %> > <%= dept.name %></label></li>
         <% end %>

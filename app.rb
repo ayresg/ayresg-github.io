@@ -1,47 +1,46 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/static_assets'
+require 'sinatra/multi_route'
 require './config/environments' #database configuration
 current_dir = Dir.pwd           #models
 Dir["#{current_dir}/models/*.rb"].each { |file| require file }
 
-get '/index' do
+get '/', '/index' do
   @title = 'Academy of Scholars and Fools'
   @image = Image.find_by_file_name('old_books.jpg')
   erb :index
 end
 
-get '/academics/?:subpath' do |subpath|
-  case
-  when Department.find_by_page_address(subpath)
-    @dept = Department.find_by_page_address(subpath)
+# Academics, departments, etc
+get '/academics/?' do
+  @title = 'Academics at ASF'
+    @image = Image.find_by_file_name('girl_with_book.jpg')
+    erb :'academics'
+end
+
+
+get '/academics/:dept' do |dept|
+    @dept = Department.find_by_page_address(dept)
+  if @dept
     @image = Image.find_by_file_name(@dept.header_image_name)
     erb :"/academics/#{@dept.page_address}"
-  when subpath === nil, subpath === 'index'
-    @title = 'Academics at ASF'
-    @image = Image.find_by_file_name('girl_with_book.jpg')
-    erb :'academics/index'
   else
-    print '<p> dept </p>'
+    halt 404, "That's not a department here."
   end
 end
 
-get '/admissions/?:subpath' do |subpath|
+# Admissions and aid
+get '/admissions/?' do
   @title = 'Admissions & Aid'
   @image = Image.find_by_file_name('hands_and_map.jpg')
-  case subpath
-  when nil, 'index'
-    erb :'admissions/index'
-  end
+  erb :'admissions'
 end
 
-get '/student-life/?:subpath' do |subpath|
+get '/student-life/?', '/studentlife/?', '/student_life/?' do
   @title = 'Life at ASF'
   @image = Image.find_by_file_name('walking_in_forest.jpg')
-  case subpath
-  when nil, 'index'
-    erb :'admissions/index' # TODO fix this link
-  end
+  erb :'student_life'
 end
 
 get '/course_testing' do
