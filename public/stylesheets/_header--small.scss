@@ -1,54 +1,100 @@
-.small_header_container,
-.footer_container {
-  background-color: $vibrant-color;
-  color: $background-color;
-}
-
+$small-header-min-height: 50px;
+$masthead-font-size: 3.75vw;
+$masthead-font-size__small: $masthead-font-size * 0.75;
+$hamburger-dimension: 1.25em;
+$hamburger-ratio: 0.15;
+// Header
 .small_header_container {
+  // layout
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  .small_header_item {
-    margin: $margin;
-    &.logo {
-      height: 1.75em;
-    }
+  //  min-height: $small-header-min-height;
+  justify-content: flex-end;
+  // color
+  background-color: $dark-accent-color;
+  color: $background-color;
+}
+
+// Masthead
+.masthead_name--small {
+  // positioning
+  position: absolute;
+  left: 0;
+  // layout
+  margin-left: $margin;
+  padding: $padding;
+  // font
+  font-family: $masthead-font;
+  font-size: $masthead-font-size;
+  span {
+    margin: 0 0.125em;
+  }
+  .ital {
+    font: $cursive-font;
+    vertical-align: middle;
+    font-size: $masthead-font-size__small;
+    padding-right: 0.125em;
   }
 }
 
+// Dropdown
 .dropdown_container {
+  // position
+  height: auto;
+  // layout
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-end;
-  // appearance of the menu button
-  &.navicon {
-    width: 1.75em;
-    height: 1.25em;
-    line-height: 0;
-    border-top: .75em double $background-color;
-    border-bottom: .25em solid $background-color;
-  }
+  // hide dropdown when not in use
   .dropdown_item {
-    display: none;
+    // stealth
+    max-height: 0vh;
+    width: 0vw;
+    z-index: -1;
+    transition-property: max-height;
+    transition-delay: 1s;
+    transition-duration: 1s;
   }
-  &:hover .dropdown_item {
-    padding: $padding;
-    margin: 0;
-    width: 100vw;
-    flex: 1;
-    min-height: 1.25em;
-    display: flex;
-    background-color: $vibrant-color;
-    &.primary_nav_item--small {
-      color: red;
+  // bring out dropdown
+  &:hover {
+    .navicon {
+      background-color: $light-accent-color;
+      box-shadow: 0 2 * $hamburger-ratio * $hamburger-dimension $light-accent-color, 0 4 * $hamburger-ratio * $hamburger-dimension $light-accent-color;
+      transition-property: box-shadow, background-color;
+      transition-duration: 0.5s;
     }
-    &.secondary_nav_item--small {
-      color: aqua;
+    .dropdown_item {
+      // de-stealth
+      z-index: 1;
+      display: block;
+      transition: max-height 3s;
+      max-height: 300px;
+      display: block;
+      // layout
+      width: 100vw;
+      text-align: right;
+      padding: $padding;
     }
-    &li {
-      list-style-type: none;
-    }
+  }
+  // highlight dropdown items on hover
+  .dropdown_item:hover {
+    color: $light-accent-color;
+    background-color: $base-font-color;
+    transition-property: color, background-color;
+      transition-duration: 0.5s;
+  }
+  .navicon {
+    // layout
+    margin: $margin;
+    margin-bottom: $margin + $hamburger-dimension * 4 * $hamburger-ratio;
+    // main shape
+    background-color: $background-color;
+    width: $hamburger-dimension;
+    height: $hamburger-ratio * $hamburger-dimension;
+    border-radius: 3px;
+    // the shadows
+    box-shadow: 0 0 $background-color, 0 2 * $hamburger-ratio * $hamburger-dimension $background-color, 0 4 * $hamburger-ratio * $hamburger-dimension $background-color;
   }
 }

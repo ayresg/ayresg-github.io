@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
   <h1>Add a course:</h1>
-  <form method="post" action="/course_testing">
-    <p>Course name: <input type="text" name="name"></p>
-    <fieldset><legend>Department(s):</legend>
-      <% Department.find_each do |dept| %>
-      <li><input type="checkbox" name="departments[]"
-      value= <%= dept.abbrev %> > <%= dept.name %> </li>
-      <% end %>
+  <form class="form" method="post" action="/course_testing">
+    <label>Course name: <input type="text" name="name"></label>
+    
+    <label for="">Course number: <input type="number" name="number"></label>
+    
+    <fieldset>
+     <legend>Department(s):</legend>
+     
+      <ul class="column_list_container pl">
+        <% Department.find_each do |dept| %>
+          <li class="column_list_item"><label><input type="checkbox" name="departments[]"
+          value= <%= dept.abbrev %> > <%= dept.name %></label></li>
+        <% end %>
+      </ul>
     </fieldset>
-    <p>Course number: <input type="number" name="number"></p>
+    
+    <label>Course description:
+      <textarea type="text" name="description" maxlength="600" wrap="soft" placeholder="Course Description">
+      </textarea>
+    </label>
+    
     <p><input type="submit"></p>
   </form>
  
@@ -17,7 +29,7 @@
   <h1>Courses by department:</h1>
   <% depts = Department.includes(:courses) %>
   <% depts.each do |dept| %>
-    <ul><%= dept.name %>
+    <ul><h4><%= dept.name %></h6>
     <% dept.courses.each do |thing| %>
       <li><%= thing.name %></li>
     <% end %></ul>

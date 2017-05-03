@@ -51,7 +51,7 @@ end
 
 post '/course_testing' do
   @title = 'Testing'
-  course = Course.create(name: params[:name], number: params[:number])
+  course = Course.create(name: params[:name], number: params[:number], description: params[:description])
   codes = ""
   params[:departments].each do |dept|
     real_dept = Department.find_by_abbrev(dept)
