@@ -44,10 +44,10 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
     // regular layout stuff
     margin: $margin;
     padding: $padding 0;
+      color: $background-color;
     p {
       margin: 0;
       font-family: $masthead-font;
-      color: $background-color;
     }
     .title {
       font-size: $masthead-font-size__big;
@@ -82,6 +82,7 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
   // text
   font-size: 0.75rem;
   color: $background-color;
+  @include link_hover($light-accent-color, $background-color);
 }
 
 .primary_nav--big {
@@ -94,7 +95,7 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
   font: $cursive-font;
   font-size: 3vw;
   color: $dark-accent-color;
-  @include link_hover($dark-accent-color, black);
+  @include link_hover($dark-accent-color, $bright-dark-accent-color);
 }
 
 @media(max-width: $big-screen-threshold) {

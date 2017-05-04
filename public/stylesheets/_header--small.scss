@@ -45,12 +45,12 @@ $small-header-min-height: calc(#{$masthead-font-size} + 2 * #{$margin});
 // Nav styles
 .primary_nav_item--small {
   font-family: $header-font;
-  @include link_hover_bg($background-color, white, inherit, $base-font-color);
+  @include link_hover_bg($light-accent-color, $background-color, inherit, $bright-dark-accent-color);
 }
 
 .secondary_nav_item--small {
   color: $medium-accent-color;
-  @include link_hover_bg($light-accent-color, $background-color, inherit, $base-font-color);
+  @include link_hover_bg($medium-accent-color, $background-color, inherit, $bright-dark-accent-color);
 }
 
 // Dropdown
@@ -73,7 +73,8 @@ $small-header-min-height: calc(#{$masthead-font-size} + 2 * #{$margin});
     font-size: 0px;
     opacity: 0;
     // transition
-    transition: padding 1s, opacity 0.5s, font-size 1s, max-height 1s, color 0.5s, background-color 0.5s;
+    transition: padding 1s, opacity 0.5s, font-size 1s, max-height 1s, color 1s, background-color 1s;
+//    transition: max-height 5s;
     ;
   }
   // bring out dropdown
@@ -84,7 +85,7 @@ $small-header-min-height: calc(#{$masthead-font-size} + 2 * #{$margin});
     }
     .dropdown_item {
       // de-stealth
-      max-height: 100vh;
+      max-height: 9999999px;
       font-size: 4vw;
       opacity: 1;
     }
