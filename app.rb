@@ -20,11 +20,11 @@ get '/academics/?' do
 end
 
 
-get '/academics/:dept' do |dept|
+get '/departments/:dept' do |dept|
     @dept = Department.find_by_page_address(dept)
   if @dept
     @image = Image.find_by_file_name(@dept.header_image_name)
-    erb :"/academics/#{@dept.page_address}"
+    erb :"/departments/#{@dept.page_address}"
   else
     halt 404, "That's not a department here."
   end

@@ -1,10 +1,9 @@
 <h1>Academics at ASF</h1>
-
 <h2>Department list:</h2>
 <!-- Iterate through list of departments -->
 <ul class="item_box pl">
   <% Department.all.each do |dept| %>
       <%= link_to(
-  "<li>#{dept.name}</li>", "academics/#{dept.page_address}") %>
+  "<li>#{dept.name}</li>", "departments/#{dept.page_address}") %>
   <% end %>  
 </ul>
