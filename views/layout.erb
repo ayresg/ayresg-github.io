@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <!-- Set default title and image -->
-    <% @title ||= 'Academy of Scholars and Fools' %>
-    <% @image ||= Image.find_by_file_name('cobweb.jpg') %>
+<html lang="en">
+
+<head>
+  <!-- Set default title and image -->
+  <% if @title
+        @title = @title << ' | Academy of Scholars and Fools'
+      else
+        @title = 'Academy of Scholars and Fools'
+      end
+      @image ||= 'cliffside_castle.jpg'
+      @image = Image.find_by_file_name(@image)
+    %>
+
     <!-- Title -->
     <title>
       <%= @title %>
@@ -18,44 +26,48 @@
     <!-- Css -->
     <%= stylesheet_link_tag "/stylesheets/style.css" %>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Cabin|IM+Fell+English:400,400i" rel="stylesheet">
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Cabin|IM+Fell+English:400,400i" rel="stylesheet">
 
-  </head>
-  <body>
-<!-- Big header and navbar and everything  -->
-  <header class="big_header_container" style='background-image: url(<%="../images/#{@image.file_name}" %>);'>
+</head>
+
+<body>
+  <!-- Big header and navbar and everything  -->
+  <nav class="big_header_container" style='background-image: url(<%="../images/#{@image.file_name}" %>);'>
     <!-- Secondary Navbar (big)-->
-      <ul class="secondary_nav--big pl">
-        <li><a href="<%= url('/students') %>">Students</a></li>
-        <li><a href="<%= url('/faculty-and-staff') %>">Faculty &amp; Staff</a></li>
-        <li><a href="<%= url('/guild') %>">Guild</a></li>
-        <li><a href="<%= url('/visitors') %>">Visitors</a></li>
-      </ul>
-     
-     <div class="masthead">
+    <ul class="secondary_nav--big pl">
+      <li><a href="<%= url('/students') %>">Students</a></li>
+      <li><a href="<%= url('/faculty-and-staff') %>">Faculty &amp; Staff</a></li>
+      <li><a href="<%= url('/guild') %>">Guild</a></li>
+      <li><a href="<%= url('/visitors') %>">Visitors</a></li>
+    </ul>
+    <div class="masthead">
       <!--Logo-->
-      <%= link_to((image_tag("/images/placeholder_logo_light.png", :alt => "Logo", :class => "masthead_logo")), '/index') %>
-      <!-- Title -->
-      <a href="<%= url('/index') %>" class="masthead_name--big">
-        <p class="title">ACADEMY</p>
-        <p class="subtitle">
-          <span class="ital">of</span>
-          <span class="normal">SCHOLA<i>RS</i></span> 
-          <span class="ital">and</span>
-          <span class="normal">FOOLS</span>
-        </p>
-      </a>
+      <%= link_to(image_tag("/images/placeholder_logo_light.png", :alt => "Logo", :class => "masthead_logo"), url('/')) %>
+        <!-- Title -->
+        <a href="<%= url('/') %>" class="masthead_name--big">
+          <p class="title">ACADEMY</p>
+          <p class="subtitle">
+            <span class="ital">of</span>
+            <span class="normal">SCHOLA<i>RS</i></span>
+            <span class="ital">and</span>
+            <span class="normal">FOOLS</span>
+          </p>
+        </a>
     </div>
-    
-     <!-- Primary Navbar (big) -->
+
+
+
+
+
+    <!-- Primary Navbar (big) -->
     <ul class="primary_nav--big pl">
       <li><a href="<%= url('/academics') %>">Academics</a></li>
       <li><a href="<%= url('/admissions') %>">Admissions &amp; Aid</a></li>
       <li><a href="<%= url('/student-life') %>">Student Life</a></li>
       <li><a href="<%= url('/about') %>">About</a></li>
-     </ul>
-  </header>
+    </ul>
+  </nav>
 
   <!-- Small Header and Navbar (Primary & Secondary) -->
   <header class="small_header_container">
@@ -67,29 +79,37 @@
       <span class="ital">and</span>
       <span>FOOLS</span>
     </div>
-      
+
     <!--Small Navigation-->
     <nav class="dropdown_container pl">
       <!--Small primary navigation-->
       <li class="navicon"></li>
       <a href="<%= url('/academics') %>">
-        <li class = "dropdown_item primary_nav_item--small">Academics</li></a>
+        <li class="dropdown_item primary_nav_item--small">Academics</li>
+      </a>
       <a href="<%= url('/admissions') %>">
-        <li class = "dropdown_item primary_nav_item--small">Admissions &amp; Aid</li></a>
+        <li class="dropdown_item primary_nav_item--small">Admissions &amp; Aid</li>
+      </a>
       <a href="<%= url('/student-life') %>">
-        <li class = "dropdown_item primary_nav_item--small">Student Life</li></a>
+        <li class="dropdown_item primary_nav_item--small">Student Life</li>
+      </a>
       <a href="<%= url('/about') %>">
-        <li class = "dropdown_item primary_nav_item--small">About</li></a>
-        
+        <li class="dropdown_item primary_nav_item--small">About</li>
+      </a>
+
       <!-- Small secondary navigation -->
       <a href="<%= url('/students') %>">
-        <li class = "dropdown_item secondary_nav_item--small">Students</li></a>
+        <li class="dropdown_item secondary_nav_item--small">Students</li>
+      </a>
       <a href="<%= url('/faculty-and-staff') %>">
-        <li class = "dropdown_item secondary_nav_item--small">Faculty &amp; Staff</li></a>
+        <li class="dropdown_item secondary_nav_item--small">Faculty &amp; Staff</li>
+      </a>
       <a href="<%= url('/guild') %>">
-        <li class = "dropdown_item secondary_nav_item--small">Guild</li></a>
+        <li class="dropdown_item secondary_nav_item--small">Guild</li>
+      </a>
       <a href="<%= url('/visitors') %>">
-        <li class = "dropdown_item secondary_nav_item--small">Visitors</li></a>
+        <li class="dropdown_item secondary_nav_item--small">Visitors</li>
+      </a>
     </nav>
   </header>
 
@@ -111,4 +131,5 @@
   </footer>
 
 </body>
+
 </html>

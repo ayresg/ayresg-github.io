@@ -5,10 +5,14 @@ class Image < ActiveRecord::Base
       'CC BY-SA 2.0' => 'https://creativecommons.org/licenses/by-sa/2.0/'
       }
   def attribution
-#    title = name? name : 'Photo'
-    name ||= 'Photo'
-    "<a href='#{image_address}'>#{name}</a> by 
-    <a href='#{author_address}'>#{author_name}</a> licensed under 
-    <a href='#{@@license_links[license]}'>#{license}</a>"
+    title = name && !name.empty? ? "<cite>#{name}</cite>" : "Photo"
+    licensing_info = 
+      if license
+        ", licensed under <a href='#{@@license_links[license]}'>#{license}</a>"
+      else
+        nil
+      end
+    "<a href='#{image_address}'>#{title}</a> by 
+    <a href='#{author_address}'>#{author_name}</a>#{licensing_info}</a>"
   end
 end

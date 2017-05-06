@@ -1,4 +1,4 @@
-  @import "_mixins";
+@import "_mixins";
 $header-height: 30vh;
 $masthead-width: 30vw;
 $masthead-font-size__big: $masthead-width * 0.15;
@@ -21,7 +21,7 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
     width: 100%;
     height: 100%;
     content: "";
-    background-image: linear-gradient(rgba($dark-accent-color, 0.8), rgba(black, 0) 65%, $background-color);
+    background-image: linear-gradient(rgba($dark-accent-color, 0.8), rgba(black, 0));
   }
   li {
     z-index: 3;
@@ -32,6 +32,7 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
   .masthead {
     z-index: 1;
     width: $masthead-width;
+    color: $background-color;
     // flex those biceps
     display: flex;
     align-items: center;
@@ -44,7 +45,6 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
     // regular layout stuff
     margin: $margin;
     padding: $padding 0;
-      color: $background-color;
     p {
       margin: 0;
       font-family: $masthead-font;
@@ -80,7 +80,7 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
   flex-flow: row nowrap;
   align-items: center;
   // text
-  font-size: 0.75rem;
+  font-size: small;
   color: $background-color;
   @include link_hover($light-accent-color, $background-color);
 }
@@ -89,6 +89,7 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
   // layout
   margin: 0;
   padding: 0;
+  padding-top: $padding;
   display: flex;
   justify-content: space-around;
   // text
@@ -96,18 +97,18 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
   font-size: 3vw;
   color: $dark-accent-color;
   @include link_hover($dark-accent-color, $bright-dark-accent-color);
+  @include background_gradient($background-color, rgba(black, 0), bottom, top);
 }
 
 @media(max-width: $big-screen-threshold) {
-  .big_header_container:before {
-    background-image: linear-gradient(rgba($dark-accent-color, 0.8), rgba(black, 0) 45%, $background-color);
-  }
+  //  .big_header_container:before {
+  //    background-image: linear-gradient(rgba($dark-accent-color, 0.8), rgba(black, 0) 45%, $background-color);
+  //  }
   .masthead_logo {
     display: none;
   }
   .masthead_name--big {
-//    margin-left: $margin * 2;
-    @include link_hover($background-color, white);
+    //    margin-left: $margin * 2;
   }
   .primary_nav--big {
     display: flex;

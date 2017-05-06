@@ -86,7 +86,7 @@ $small-header-min-height: calc(#{$masthead-font-size} + 2 * #{$margin});
     .dropdown_item {
       // de-stealth
       max-height: 9999999px;
-      font-size: 4vw;
+      font-size: large;
       opacity: 1;
     }
   }
@@ -119,7 +119,7 @@ $small-header-min-height: calc(#{$masthead-font-size} + 2 * #{$margin});
       letter-spacing: 0.15em;
     }
     &:hover .dropdown_item {
-      font-size: 7vw;
+      font-size: large;
     }
   }
 }
