@@ -27,7 +27,7 @@
     <%= stylesheet_link_tag "/stylesheets/style.css" %>
 
       <!-- Fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Cabin|IM+Fell+English:400,400i" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Antic|IM+Fell+English:400,400i" rel="stylesheet">
 
 </head>
 
@@ -122,8 +122,10 @@
     <div class="footer_item">
       <%= @image.attribution %>
     </div>
+    
     <div class="footer_item">
-      ©Copyright 1257 by the President and Daughter-in-Law Elect of the Academy of Scholars and Fools.
+      <% date = 1257 + (Date.today.year - 2017) %>
+      <%= "©Copyright #{date} by the President and Daughter-in-Law Elect of the Academy of Scholars and Fools." %>
     </div>
     <div class="footer_item">
       More links will go here when I get my shit together.

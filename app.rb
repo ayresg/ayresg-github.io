@@ -50,7 +50,7 @@ end
 # ABOUT
 get '/about/?' do
   @title = 'About the Academy'
-  @image = 'cliffside_village.jpg'
+  @image = 'town_fairytale.jpg'
   erb 'The Academy sure is a place.' # TODO make actual page
 end
 
@@ -60,7 +60,7 @@ end
 # VISITORS
 get '/visitors/?' do
   @title = 'Information for Visitors'
-  @image = 'sunlit_riders.jpg'
+  @image = 'town_rustic_colors.jpg'
   erb :visitors
 end
 

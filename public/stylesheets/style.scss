@@ -12,14 +12,14 @@ $cursive-font: italic 2em 'IM Fell English',
 cursive;
 $header-font: "IM Fell English",
 serif;
-$text-font: "Cabin",
+$text-font: "Antic",
 sans-serif;
 // Layout variables
 $margin: 0.5em;
 $padding: $margin;
 $tiny-screen-threshold: 300px;
 $medium-screen-threshold: 450px;
-$big-screen-threshold: 600px;
+$big-screen-threshold: 700px;
 // Imports
 @import "_mixins";
 @import "_box-sizing";

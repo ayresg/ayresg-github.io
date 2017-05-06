@@ -101,14 +101,11 @@ $masthead-font-size__smallest: $masthead-font-size__smaller * 0.75;
 }
 
 @media(max-width: $big-screen-threshold) {
-  //  .big_header_container:before {
-  //    background-image: linear-gradient(rgba($dark-accent-color, 0.8), rgba(black, 0) 45%, $background-color);
-  //  }
   .masthead_logo {
     display: none;
   }
-  .masthead_name--big {
-    //    margin-left: $margin * 2;
+  .masthead {
+    margin-left: $margin;
   }
   .primary_nav--big {
     display: flex;

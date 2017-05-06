@@ -521,16 +521,19 @@ template {
     .primary_nav--big a:hover {
       color: #621c34; }
 
-@media (max-width: 600px) {
-  /* line 107, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+@media (max-width: 700px) {
+  /* line 104, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
   .masthead_logo {
     display: none; }
-  /* line 113, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+  /* line 107, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+  .masthead {
+    margin-left: 0.5em; }
+  /* line 110, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
   .primary_nav--big {
     display: flex;
     flex-flow: row wrap;
     font-size: 5vw; }
-    /* line 117, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+    /* line 114, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
     .primary_nav--big li {
       margin: 0 5vw;
       padding: 0.125em 0.5em;
@@ -652,7 +655,7 @@ body {
   background-color: #f0f3f3;
   text-align: justify;
   text-decoration: none;
-  font-family: "Cabin", sans-serif;
+  font-family: "Antic", sans-serif;
   letter-spacing: 0.025rem; }
 
 /* line 48, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
